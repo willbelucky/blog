@@ -1,0 +1,10 @@
+# WebStorm IDE
+/.idea
+*.iml
+
+# Modules
+/node_modules
+package-lock.json
+bundle.js
+npm-debug.log
+.DS_Store
