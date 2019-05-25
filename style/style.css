@@ -2,6 +2,20 @@
     display: flex;
 }
 
+#post-list-header {
+    margin-left: 5px;
+}
+
+#new-post-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.categories {
+    display: flex;
+    justify-content: flex-end;
+}
+
 form a {
     margin-left: 5px;
 }
