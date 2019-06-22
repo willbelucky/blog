@@ -27,7 +27,7 @@ class PostIndex extends Component {
             <div>
                 <div className="d-flex justify-content-between">
                     <h3>Posts</h3>
-                    <Link to="/post/new" className="btn btn-primary">
+                    <Link to="/posts/new" className="btn btn-primary">
                         Add a Post
                     </Link>
                 </div>

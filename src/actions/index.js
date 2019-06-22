@@ -11,13 +11,16 @@ const API_KEY = '?key=willbelucky';
 export function fetchPosts() {
     const request = axios.get(`${ROOT_URL}/posts${API_KEY}`);
 
-    return {
-        type: FETCH_POSTS,
-        payload: request
+    return (dispatch) => {
+        request.then(({data}) => {
+                dispatch({type: FETCH_POSTS, payload: data})
+            }
+        );
     };
 }
 
 export function createPost(props) {
+    console.log(props);
     const request = axios.post(`${ROOT_URL}/posts${API_KEY}`, props);
 
     return {
@@ -29,9 +32,11 @@ export function createPost(props) {
 export function fetchPost(id) {
     const request = axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`);
 
-    return {
-        type: FETCH_POST,
-        payload: request
+    return (dispatch) => {
+        request.then(({data}) => {
+                dispatch({type: FETCH_POST, payload: data})
+            }
+        );
     };
 }
 
@@ -41,5 +46,5 @@ export function deletePost(id) {
     return {
         type: DELETE_POST,
         payload: request
-    };
+    }
 }
