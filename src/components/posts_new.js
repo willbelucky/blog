@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {Field, reduxForm} from "redux-form";
 import {connect} from "react-redux";
 import {Link} from 'react-router-dom';
@@ -46,10 +47,18 @@ const PostsNewForm = reduxForm({
 });
 
 class PostsNew extends Component {
+    static contextTypes = {
+      router: PropTypes.object
+    };
+
     onSubmit(props) {
         this.props.createPost(props)
             .then(() => {
-                this.props.history.push('/post');
+                const {history} = this.props;
+                // A blog post has been created, navigate the user to the index
+                // We navigate by calling this.context.router.push with the
+                // new path to navigate to.
+                history.push('/posts');
             });
     }
 

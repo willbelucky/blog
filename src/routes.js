@@ -10,9 +10,9 @@ export default (
     <Router>
         <Route exact path="/" component={App}/>
         <Switch>
-            <Route exact path="/post" component={PostsIndex}/>
-            <Route path="/post/new" component={PostsNew}/>
-            <Route path="/post/:id" component={PostsShow}/>
+            <Route exact path="/posts" component={PostsIndex}/>
+            <Route path="/posts/new" component={PostsNew}/>
+            <Route path="/posts/:id" component={PostsShow}/>
         </Switch>
     </Router>
 );
